@@ -2,13 +2,14 @@
 
 use Guiwoda\Framework\Contracts\Requirement as iRequirement;
 use Guiwoda\Framework\Contracts\Responsible as iResponsible;
+use Guiwoda\Framework\Contracts\Resolver    as iResolver;
 
-class Resolver
+class Resolver implements iResolver
 {
 	public function satisfies(iRequirement $requirement, iResponsible $responsible)
 	{
 		$requiredClass = new \ReflectionClass($requirement->getClass());
-		$givenClass    = new \ReflectionClass($responsible->respondsWith());
+		$givenClass    = new \ReflectionClass($responsible->isResponsibleFor());
 
 		return $this->isSatisfiedBy($requiredClass, $givenClass);
 	}

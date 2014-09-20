@@ -12,6 +12,11 @@ use Prophecy\Argument;
  */
 class ResolverSpec extends ObjectBehavior
 {
+	function it_abides_to_a_contract()
+	{
+		$this->shouldHaveType('Guiwoda\Framework\Contracts\Resolver');
+	}
+
     function it_is_initializable()
     {
         $this->shouldHaveType('Guiwoda\Framework\Requirements\Resolver');
@@ -19,7 +24,7 @@ class ResolverSpec extends ObjectBehavior
 
 	function it_should_satisfy_an_interface_with_an_object_that_implements_it(Requirement $requirement, Responsible $responsible)
 	{
-		$responsible->respondsWith()->willReturn(anInterfaceImplementation::class);
+		$responsible->isResponsibleFor()->willReturn(anInterfaceImplementation::class);
 		$requirement->getClass()->willReturn(anInterface::class);
 
 		$this->satisfies($requirement, $responsible)->shouldReturn(true);
@@ -28,7 +33,7 @@ class ResolverSpec extends ObjectBehavior
 	function it_shouldnt_satisfy_an_interface_with_an_object_that_doesnt_implement_it(Requirement $requirement, Responsible $responsible)
 	{
 		$requirement->getClass()->willReturn(anInterface::class);
-		$responsible->respondsWith()->willReturn(aClass::class);
+		$responsible->isResponsibleFor()->willReturn(aClass::class);
 
 		$this->satisfies($requirement, $responsible)->shouldReturn(false);
 	}
@@ -36,7 +41,7 @@ class ResolverSpec extends ObjectBehavior
 	function it_should_satisfy_an_abstract_class_with_an_object_that_implements_it(Requirement $requirement, Responsible $responsible)
 	{
 		$requirement->getClass()->willReturn(anAbstractClass::class);
-		$responsible->respondsWith()->willReturn(anAbstractClassImplementation::class);
+		$responsible->isResponsibleFor()->willReturn(anAbstractClassImplementation::class);
 
 		$this->satisfies($requirement, $responsible)->shouldReturn(true);
 	}
@@ -44,7 +49,7 @@ class ResolverSpec extends ObjectBehavior
 	function it_shouldnt_satisfy_an_abstract_class_with_an_object_that_doesnt_implement_it(Requirement $requirement, Responsible $responsible)
 	{
 		$requirement->getClass()->willReturn(anAbstractClass::class);
-		$responsible->respondsWith()->willReturn(aClass::class);
+		$responsible->isResponsibleFor()->willReturn(aClass::class);
 
 		$this->satisfies($requirement, $responsible)->shouldReturn(false);
 	}
@@ -52,7 +57,7 @@ class ResolverSpec extends ObjectBehavior
 	function it_should_satisfy_a_class_with_an_object_that_extends_it(Requirement $requirement, Responsible $responsible)
 	{
 		$requirement->getClass()->willReturn(aClass::class);
-		$responsible->respondsWith()->willReturn(aSubclass::class);
+		$responsible->isResponsibleFor()->willReturn(aSubclass::class);
 
 		$this->satisfies($requirement, $responsible)->shouldReturn(true);
 	}
@@ -60,7 +65,7 @@ class ResolverSpec extends ObjectBehavior
 	function it_shouldnt_satisfy_a_class_with_an_object_that_doesnt_extend_it(Requirement $requirement, Responsible $responsible)
 	{
 		$requirement->getClass()->willReturn(aSubclass::class);
-		$responsible->respondsWith()->willReturn(aClass::class);
+		$responsible->isResponsibleFor()->willReturn(aClass::class);
 
 		$this->satisfies($requirement, $responsible)->shouldReturn(false);
 	}
@@ -68,7 +73,7 @@ class ResolverSpec extends ObjectBehavior
 	function it_should_satisfy_a_class_with_an_object_of_that_class(Requirement $requirement, Responsible $responsible)
 	{
 		$requirement->getClass()->willReturn(aClass::class);
-		$responsible->respondsWith()->willReturn(aClass::class);
+		$responsible->isResponsibleFor()->willReturn(aClass::class);
 
 		$this->satisfies($requirement, $responsible)->shouldReturn(true);
 	}
@@ -76,7 +81,7 @@ class ResolverSpec extends ObjectBehavior
 	function it_shouldnt_satisfy_a_class_with_an_object_of_another_class(Requirement $requirement, Responsible $responsible)
 	{
 		$requirement->getClass()->willReturn(aClass::class);
-		$responsible->respondsWith()->willReturn(anotherClass::class);
+		$responsible->isResponsibleFor()->willReturn(anotherClass::class);
 
 		$this->satisfies($requirement, $responsible)->shouldReturn(false);
 	}
