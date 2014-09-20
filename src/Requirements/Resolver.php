@@ -1,8 +1,10 @@
 <?php namespace Guiwoda\Framework\Requirements;
 
+use Guiwoda\Framework\Contracts\Requirement as iRequirement;
+
 class Resolver
 {
-	public function satisfies(Requirement $requirement, $satisfier)
+	public function satisfies(iRequirement $requirement, $satisfier)
 	{
 		$requiredClass = new \ReflectionClass($requirement->getClass());
 		$givenClass    = new \ReflectionObject($satisfier);

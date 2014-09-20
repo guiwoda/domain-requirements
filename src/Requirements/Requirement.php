@@ -1,6 +1,8 @@
 <?php namespace Guiwoda\Framework\Requirements;
 
-class Requirement
+use Guiwoda\Framework\Contracts\Requirement as iRequirement;
+
+class Requirement implements iRequirement
 {
 	protected $class;
 	protected $parameters;

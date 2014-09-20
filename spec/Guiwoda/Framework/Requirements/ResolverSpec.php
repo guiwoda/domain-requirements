@@ -1,6 +1,6 @@
 <?php namespace spec\Guiwoda\Framework\Requirements;
 
-use Guiwoda\Framework\Requirements\Requirement;
+use Guiwoda\Framework\Contracts\Requirement;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
@@ -16,68 +16,68 @@ class ResolverSpec extends ObjectBehavior
         $this->shouldHaveType('Guiwoda\Framework\Requirements\Resolver');
     }
 
-	function it_should_satisfy_an_interface_with_an_object_that_implements_it()
+	function it_should_satisfy_an_interface_with_an_object_that_implements_it(Requirement $requirement)
 	{
-		$requirement = new Requirement(anInterface::class);
+		$requirement->getClass()->willReturn(anInterface::class);
 		$satisfier = new anInterfaceImplementation();
 
 		$this->satisfies($requirement, $satisfier)->shouldReturn($satisfier);
 	}
 
-	function it_shouldnt_satisfy_an_interface_with_an_object_that_doesnt_implement_it()
+	function it_shouldnt_satisfy_an_interface_with_an_object_that_doesnt_implement_it(Requirement $requirement)
 	{
-		$requirement = new Requirement(anInterface::class);
+		$requirement->getClass()->willReturn(anInterface::class);
 		$satisfier = new aClass();
 
 		$this->shouldThrow('Guiwoda\Framework\Requirements\RequirementNotMetException')
 			->duringSatisfies($requirement, $satisfier);
 	}
 
-	function it_should_satisfy_an_abstract_class_with_an_object_that_implements_it()
+	function it_should_satisfy_an_abstract_class_with_an_object_that_implements_it(Requirement $requirement)
 	{
-		$requirement = new Requirement(anAbstractClass::class);
+		$requirement->getClass()->willReturn(anAbstractClass::class);
 		$satisfier = new anAbstractClassImplementation();
 
 		$this->satisfies($requirement, $satisfier)->shouldReturn($satisfier);
 	}
 
-	function it_shouldnt_satisfy_an_abstract_class_with_an_object_that_doesnt_implement_it()
+	function it_shouldnt_satisfy_an_abstract_class_with_an_object_that_doesnt_implement_it(Requirement $requirement)
 	{
-		$requirement = new Requirement(anAbstractClass::class);
+		$requirement->getClass()->willReturn(anAbstractClass::class);
 		$satisfier = new aClass();
 
 		$this->shouldThrow('Guiwoda\Framework\Requirements\RequirementNotMetException')
 			->duringSatisfies($requirement, $satisfier);
 	}
 
-	function it_should_satisfy_a_class_with_an_object_that_extends_it()
+	function it_should_satisfy_a_class_with_an_object_that_extends_it(Requirement $requirement)
 	{
-		$requirement = new Requirement(aClass::class);
+		$requirement->getClass()->willReturn(aClass::class);
 		$satisfier = new aSubclass();
 
 		$this->satisfies($requirement, $satisfier)->shouldReturn($satisfier);
 	}
 
-	function it_shouldnt_satisfy_a_class_with_an_object_that_doesnt_extend_it()
+	function it_shouldnt_satisfy_a_class_with_an_object_that_doesnt_extend_it(Requirement $requirement)
 	{
-		$requirement = new Requirement(aSubclass::class);
+		$requirement->getClass()->willReturn(aSubclass::class);
 		$satisfier = new aClass();
 
 		$this->shouldThrow('Guiwoda\Framework\Requirements\RequirementNotMetException')
 			->duringSatisfies($requirement, $satisfier);
 	}
 
-	function it_should_satisfy_a_class_with_an_object_of_that_class()
+	function it_should_satisfy_a_class_with_an_object_of_that_class(Requirement $requirement)
 	{
-		$requirement = new Requirement(aClass::class);
+		$requirement->getClass()->willReturn(aClass::class);
 		$satisfier = new aClass();
 
 		$this->satisfies($requirement, $satisfier)->shouldReturn($satisfier);
 	}
 
-	function it_shouldnt_satisfy_a_class_with_an_object_of_another_class()
+	function it_shouldnt_satisfy_a_class_with_an_object_of_another_class(Requirement $requirement)
 	{
-		$requirement = new Requirement(aClass::class);
+		$requirement->getClass()->willReturn(aClass::class);
 		$satisfier = new anotherClass();
 
 		$this->shouldThrow('Guiwoda\Framework\Requirements\RequirementNotMetException')
