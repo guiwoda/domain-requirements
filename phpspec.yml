@@ -1,0 +1,4 @@
+suites:
+  framework_suite:
+    namespace: Guiwoda\Framework
+    psr4_prefix: Guiwoda\Framework
