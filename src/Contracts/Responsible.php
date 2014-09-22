@@ -1,11 +1,11 @@
 <?php namespace Guiwoda\Framework\Contracts;
 
-interface Responsible extends ChainOfCommand
+interface Responsible
 {
 	/**
 	 * @return string
 	 */
-	public function isResponsibleFor();
+	public function getResponsibility();
 
 	/**
 	 * @param Requirement $requirement

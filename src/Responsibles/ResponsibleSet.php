@@ -15,13 +15,13 @@ class ResponsibleSet implements \Iterator
 
 	public function add(Responsible $responsible)
 	{
-		if (array_key_exists($responsible->isResponsibleFor(), $this->responsibles))
+		if (array_key_exists($responsible->getResponsibility(), $this->responsibles))
 		{
-			$this->responsibles[$responsible->isResponsibleFor()]->delegateTo($responsible);
+			$this->responsibles[$responsible->getResponsibility()]->delegateTo($responsible);
 		}
 		else
 		{
-			$this->responsibles[$responsible->isResponsibleFor()] = $responsible;
+			$this->responsibles[$responsible->getResponsibility()] = $responsible;
 		}
 
 		return $this;
