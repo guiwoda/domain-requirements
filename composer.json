@@ -7,9 +7,6 @@
         }
     ],
     "license": "MIT",
-    "require": {
-        "symfony/http-kernel": "~2.5"
-    },
     "require-dev": {
         "phpspec/phpspec": "~2.1@dev"
     },
