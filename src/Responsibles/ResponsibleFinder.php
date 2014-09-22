@@ -1,8 +1,8 @@
-<?php namespace Guiwoda\Framework\Responsibles;
+<?php namespace Guiwoda\DomainRequirements\Responsibles;
 
-use Guiwoda\Framework\Contracts\Requirement;
-use Guiwoda\Framework\Contracts\Responsible;
-use Guiwoda\Framework\Contracts\Resolver;
+use Guiwoda\DomainRequirements\Contracts\Requirement;
+use Guiwoda\DomainRequirements\Contracts\Responsible;
+use Guiwoda\DomainRequirements\Contracts\Resolver;
 
 class ResponsibleFinder
 {
@@ -12,7 +12,7 @@ class ResponsibleFinder
 	protected $responsibleSet;
 
 	/**
-	 * @var \Guiwoda\Framework\Requirements\Resolver
+	 * @var \Guiwoda\DomainRequirements\Requirements\Resolver
 	 */
 	protected $resolver;
 

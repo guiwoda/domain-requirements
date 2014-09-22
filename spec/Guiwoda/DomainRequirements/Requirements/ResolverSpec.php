@@ -1,25 +1,25 @@
-<?php namespace spec\Guiwoda\Framework\Requirements;
+<?php namespace spec\Guiwoda\DomainRequirements\Requirements;
 
-use Guiwoda\Framework\Contracts\Requirement;
-use Guiwoda\Framework\Contracts\Responsible;
+use Guiwoda\DomainRequirements\Contracts\Requirement;
+use Guiwoda\DomainRequirements\Contracts\Responsible;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
 /**
  * Class ResolverSpec
- * @package spec\Guiwoda\Framework\Requirements
- * @mixin \Guiwoda\Framework\Requirements\Resolver
+ * @package spec\Guiwoda\DomainRequirements\Requirements
+ * @mixin \Guiwoda\DomainRequirements\Requirements\Resolver
  */
 class ResolverSpec extends ObjectBehavior
 {
 	function it_abides_to_a_contract()
 	{
-		$this->shouldHaveType('Guiwoda\Framework\Contracts\Resolver');
+		$this->shouldHaveType('Guiwoda\DomainRequirements\Contracts\Resolver');
 	}
 
     function it_is_initializable()
     {
-        $this->shouldHaveType('Guiwoda\Framework\Requirements\Resolver');
+        $this->shouldHaveType('Guiwoda\DomainRequirements\Requirements\Resolver');
     }
 
 	function it_should_satisfy_an_interface_with_an_object_that_implements_it(Requirement $requirement, Responsible $responsible)

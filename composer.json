@@ -1,5 +1,5 @@
 {
-    "name": "guiwoda/framework",
+    "name": "guiwoda/domain-requirements",
     "authors": [
         {
             "name": "Guido Contreras Woda",
@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Guiwoda\\Framework\\": "src/"
+            "Guiwoda\\DomainRequirements\\": "src/"
         }
     }
 }

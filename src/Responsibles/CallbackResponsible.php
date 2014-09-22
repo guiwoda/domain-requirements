@@ -1,7 +1,7 @@
-<?php namespace Guiwoda\Framework\Responsibles;
+<?php namespace Guiwoda\DomainRequirements\Responsibles;
 
-use Guiwoda\Framework\Contracts\Requirement;
-use Guiwoda\Framework\Contracts\Responsible as iResponsible;
+use Guiwoda\DomainRequirements\Contracts\Requirement;
+use Guiwoda\DomainRequirements\Contracts\Responsible as iResponsible;
 
 class CallbackResponsible implements iResponsible
 {

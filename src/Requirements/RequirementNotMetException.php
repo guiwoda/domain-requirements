@@ -1,4 +1,4 @@
-<?php namespace Guiwoda\Framework\Requirements;
+<?php namespace Guiwoda\DomainRequirements\Requirements;
 
 class RequirementNotMetException extends \RuntimeException
 {

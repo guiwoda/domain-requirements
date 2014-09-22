@@ -1,4 +1,4 @@
-<?php namespace Guiwoda\Framework\Responsibles;
+<?php namespace Guiwoda\DomainRequirements\Responsibles;
 
 class ResponsibleNotFoundException extends \RuntimeException
 {

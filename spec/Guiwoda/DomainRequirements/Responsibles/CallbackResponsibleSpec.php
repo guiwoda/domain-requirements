@@ -1,13 +1,13 @@
-<?php namespace spec\Guiwoda\Framework\Responsibles;
+<?php namespace spec\Guiwoda\DomainRequirements\Responsibles;
 
-use Guiwoda\Framework\Contracts\Requirement;
+use Guiwoda\DomainRequirements\Contracts\Requirement;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
 /**
  * Class CallbackResponsibleSpec
- * @package spec\Guiwoda\Framework\Responsibles
- * @mixin \Guiwoda\Framework\Responsibles\CallbackResponsible
+ * @package spec\Guiwoda\DomainRequirements\Responsibles
+ * @mixin \Guiwoda\DomainRequirements\Responsibles\CallbackResponsible
  */
 class CallbackResponsibleSpec extends ObjectBehavior
 {
@@ -20,12 +20,12 @@ class CallbackResponsibleSpec extends ObjectBehavior
 
 	function it_abides_to_a_contract()
 	{
-		$this->shouldHaveType('Guiwoda\Framework\Contracts\Responsible');
+		$this->shouldHaveType('Guiwoda\DomainRequirements\Contracts\Responsible');
 	}
 
     function it_is_initializable()
     {
-        $this->shouldHaveType('Guiwoda\Framework\Responsibles\CallbackResponsible');
+        $this->shouldHaveType('Guiwoda\DomainRequirements\Responsibles\CallbackResponsible');
     }
 
 	function it_should_use_a_callback_function_to_resolve_the_requirement(Requirement $requirement)

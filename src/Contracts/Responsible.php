@@ -1,4 +1,4 @@
-<?php namespace Guiwoda\Framework\Contracts;
+<?php namespace Guiwoda\DomainRequirements\Contracts;
 
 interface Responsible
 {

@@ -1,4 +1,4 @@
 suites:
-  framework_suite:
-    namespace: Guiwoda\Framework
-    psr4_prefix: Guiwoda\Framework
+  domain_requirements_suite:
+    namespace: Guiwoda\DomainRequirements
+    psr4_prefix: Guiwoda\DomainRequirements

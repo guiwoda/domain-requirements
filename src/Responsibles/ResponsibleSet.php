@@ -1,8 +1,8 @@
-<?php namespace Guiwoda\Framework\Responsibles;
+<?php namespace Guiwoda\DomainRequirements\Responsibles;
 
-use Guiwoda\Framework\Contracts\Requirement;
-use Guiwoda\Framework\Contracts\Resolver;
-use Guiwoda\Framework\Contracts\Responsible;
+use Guiwoda\DomainRequirements\Contracts\Requirement;
+use Guiwoda\DomainRequirements\Contracts\Resolver;
+use Guiwoda\DomainRequirements\Contracts\Responsible;
 
 class ResponsibleSet implements \Iterator
 {

@@ -1,8 +1,8 @@
-<?php namespace Guiwoda\Framework\Requirements;
+<?php namespace Guiwoda\DomainRequirements\Requirements;
 
-use Guiwoda\Framework\Contracts\Requirement as iRequirement;
-use Guiwoda\Framework\Contracts\Responsible as iResponsible;
-use Guiwoda\Framework\Contracts\Resolver    as iResolver;
+use Guiwoda\DomainRequirements\Contracts\Requirement as iRequirement;
+use Guiwoda\DomainRequirements\Contracts\Responsible as iResponsible;
+use Guiwoda\DomainRequirements\Contracts\Resolver    as iResolver;
 use ReflectionClass;
 
 class Resolver implements iResolver
